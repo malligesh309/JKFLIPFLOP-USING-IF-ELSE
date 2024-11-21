@@ -33,16 +33,30 @@ By using three variable K-Map, we can get the simplified expression for next sta
 The maximum possible groupings of adjacent ones are already shown in the figure. Therefore, the simplified expression for next state Qt+1t+1 is Q(t+1)=JQ(t)′+K′Q(t)Q(t+1)=JQ(t)′+K′Q(t)
 
 **Procedure**
+step-1 Go to quartus software.
 
-/* write all the steps invloved */
+step-2 Set new environment.
+
+step-3 Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+step-4 Run the program.
+
+step-5 Give inputs in the waveform table .
+
+step-6 Run the program.
+
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by:JYESVANTHE V
-RegisterNumber:212223230119
+```
+/* Program for flipflops and verify its truth table in quartus using Verilog programming.
+Developed by:malligesh
+RegisterNumber:2122223230119
+*/
+```
 
 ```
-module JKflipflop(q, qb,j,k,clock,reset);
+module JKFLIPFLOP(q, qb,j,k,clock,reset);
     input j,k,clock,reset;
     output reg q, qb;
 	 
@@ -56,33 +70,32 @@ always @ (posedge (clock))
             end   
         
 else
-    begin
-        if (j == 0 && k == 0)
-		  begin
-		  q <= q;
-        qb <= qb;
-        end 
-		else if (j != k)
-		  begin
-		  q <= j;
-        qb <= k;
-        end 
-		else if (j == 1 && k == 1)
-		begin
-               q <= ~q;
-               qb <= ~qb;
-            end   
-        end
-		end
-	   endmodule
-   ```
-*/
-
+   begin
+	   if(j==0 && k==0)
+		   begin
+			q<=q;
+			qb<=qb;
+			end
+		else if(j!=k)
+		   begin
+			q<=j;
+			qb<=k;
+			end
+		else if(j==1 && k==1)
+		    begin
+			 q<=~q;
+			 qb<=~qb;
+			 end
+	end
+end	
+endmodule
+```
 **RTL LOGIC FOR FLIPFLOPS**
-![Screenshot 2024-10-07 113058](https://github.com/user-attachments/assets/023518c0-c3ce-4ce3-8118-624b39098ead)
+![image](https://github.com/23004205/JKFLIPFLOP-USING-IF-ELSE/assets/138971114/0eab823f-b0de-4580-87ad-8848799d5f45)
+
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
-![Screenshot 2024-10-07 113042](https://github.com/user-attachments/assets/fc76eb1c-edc7-4cd0-914e-a4edb024d881)
+![image](https://github.com/23004205/JKFLIPFLOP-USING-IF-ELSE/assets/138971114/d4b48257-e37d-46c1-9c3c-97a3b1dbb09c)
 
 **RESULTS**
-To implement  JK flipflop using verilog and validating their functionality using their functional tables has been successfully compeleted.
+Implementation of JK flipflop using verilog and validating their functionality using their functional tables is executed and the output is verified successfully.
